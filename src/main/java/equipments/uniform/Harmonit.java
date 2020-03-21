@@ -3,12 +3,14 @@ package equipments.uniform;
 import equipments.Equipment;
 
 public class Harmonit extends UniformEquipment {
-    public Harmonit(String size){
+    public Harmonit(int size){
         this.size = size;
+        this.uniformEquipmentType = "Harmonit";
     }
 
     @Override
     public String equipmentType() {
-        return "Harmonit";
+        return this.uniformEquipmentType;
     }
+
 }

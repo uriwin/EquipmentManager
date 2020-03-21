@@ -3,13 +3,19 @@ package equipments.uniform;
 import equipments.Equipment;
 
 public abstract class UniformEquipment implements Equipment {
-    public String size;
+    public int size;
+    public String uniformEquipmentType;
 
-    public String getSize() {
+    public int getSize() {
         return size;
     }
 
-    public void setSize(String size) {
+    public void setSize(int size) {
         this.size = size;
+    }
+
+    @Override
+    public String getEquipmentDetails() {
+        return "Uniform equipment type: " + this.uniformEquipmentType + ", size: " + this.size;
     }
 }

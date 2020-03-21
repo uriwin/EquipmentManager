@@ -3,7 +3,7 @@ package equipments.uniform;
 import equipments.Equipment;
 
 public class UniformEquipmentFactory {
-    public UniformEquipment getUniformEquipment(String uniformEquipmentType, String size) {
+    public UniformEquipment getUniformEquipment(String uniformEquipmentType, int size) {
 
         if (uniformEquipmentType.equalsIgnoreCase("Harmonit"))
             return new Harmonit(size);

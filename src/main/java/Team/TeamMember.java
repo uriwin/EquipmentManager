@@ -1,5 +1,7 @@
 package Team;
 
+import equipments.Equipment;
+import equipments.EquipmentStatus;
 import equipments.technology.TechnologyEquipment;
 import equipments.uniform.UniformEquipment;
 
@@ -39,16 +41,21 @@ public class TeamMember {
     }
 
     public void printEquipment() {
-        for (String uniformEquipmentType : this.memberUniformEquipment.keySet()) {
-            int uniformEquipmentTypeCount = memberUniformEquipment.get(uniformEquipmentType).size();
-            System.out.println(this.name + " from team " + this.teamName + " have: " + String.valueOf(uniformEquipmentTypeCount) + " " + uniformEquipmentType);
+        String equipmentsDetails = "";
+        String equipmentSummary = "";
 
-        }
+        System.out.println(this.name + " from team " + this.teamName + " - equipments details:");
+        equipmentsDetails += EquipmentStatus.teamMemberEquipmentDetails(this.memberUniformEquipment);
+        if (!equipmentsDetails.equals(""))
+            equipmentsDetails += System.lineSeparator();
+        equipmentsDetails += EquipmentStatus.teamMemberEquipmentDetails(this.memberTechnologyEquipment);
+        System.out.println(equipmentsDetails);
 
-        for (String technologyEquipmentType : this.memberTechnologyEquipment.keySet()) {
-            int technologyEquipmentTypeCount = memberTechnologyEquipment.get(technologyEquipmentType).size();
-            System.out.println(this.name + " from team " + this.teamName + " have: " + String.valueOf(technologyEquipmentTypeCount) + " " + technologyEquipmentType);
-
-        }
+        System.out.println(this.name + " from team " + this.teamName + " - equipments summary:");
+        equipmentSummary += EquipmentStatus.teamMemberEquipmentSummary(this.memberUniformEquipment);
+        if (!equipmentSummary.equals(""))
+            equipmentSummary += System.lineSeparator();
+        equipmentSummary += EquipmentStatus.teamMemberEquipmentSummary(this.memberTechnologyEquipment);
+        System.out.println(equipmentSummary);
     }
 }
