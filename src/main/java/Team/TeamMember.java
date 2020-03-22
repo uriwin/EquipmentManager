@@ -1,5 +1,6 @@
 package Team;
 
+import equipments.Equipment;
 import equipments.EquipmentStatus;
 import equipments.technology.TechnologyEquipment;
 import equipments.uniform.UniformEquipment;
@@ -11,51 +12,36 @@ import java.util.List;
 public class TeamMember {
     String name;
     String teamName;
-    HashMap<String, List<UniformEquipment>> memberUniformEquipment;
-    HashMap<String, List<TechnologyEquipment>> memberTechnologyEquipment;
+    HashMap<String, List<Equipment>> memberEquipments;
 
     public TeamMember(String name, String teamName) {
         this.name = name;
         this.teamName = teamName;
-        memberUniformEquipment = new HashMap<String, List<UniformEquipment>>();
-        memberTechnologyEquipment = new HashMap<String, List<TechnologyEquipment>>();
+        this.memberEquipments = new HashMap<String, List<Equipment>>();
     }
 
-    public void addUniformEquipment(UniformEquipment equipment) {
-        List<UniformEquipment> newUniformEquipmentType = memberUniformEquipment.get(equipment.getEquipmentType());
-        if (newUniformEquipmentType == null) {
-            newUniformEquipmentType = new ArrayList<UniformEquipment>();
-            memberUniformEquipment.put(equipment.getEquipmentType(), newUniformEquipmentType);
+    public void addEquipment(Equipment equipment) {
+        List<Equipment> equipmentType = this.memberEquipments.get(equipment.getEquipmentType());
+        if (equipmentType == null) {
+            equipmentType = new ArrayList<Equipment>();
+            this.memberEquipments.put(equipment.getEquipmentType(), equipmentType);
         }
-        newUniformEquipmentType.add(equipment);
+        equipmentType.add(equipment);
     }
 
-    public void addTechnologyEquipment(TechnologyEquipment equipment) {
-        List<TechnologyEquipment> TechnologyEquipmentType = memberTechnologyEquipment.get(equipment.getEquipmentType());
-        if (TechnologyEquipmentType == null) {
-            TechnologyEquipmentType = new ArrayList<TechnologyEquipment>();
-            memberTechnologyEquipment.put(equipment.getEquipmentType(), TechnologyEquipmentType);
-        }
-        TechnologyEquipmentType.add(equipment);
-    }
-
-    public StringBuilder getMemberEquipmentDetails(){
+    public StringBuilder getMemberEquipmentDetails() {
         StringBuilder equipmentsDetails = new StringBuilder();
-        equipmentsDetails.append(this.name).append(" from team ").append(this.teamName).append(" - equipments details:");
-        equipmentsDetails.append(EquipmentStatus.teamMemberEquipmentDetails(this.memberUniformEquipment));
-        if (equipmentsDetails.length() != 0)
-            equipmentsDetails.append(System.lineSeparator());
-        equipmentsDetails.append(EquipmentStatus.teamMemberEquipmentDetails(this.memberTechnologyEquipment));
+        EquipmentStatus equipmentStatus = new EquipmentStatus();
+        equipmentsDetails.append(this.name).append(" from team ").append(this.teamName).append(" - equipments details:").append(System.lineSeparator());
+        equipmentsDetails.append(equipmentStatus.teamMemberEquipmentDetails(this.memberEquipments));
         return equipmentsDetails;
     }
 
-    public StringBuilder getMemberEquipmentSummary(){
+    public StringBuilder getMemberEquipmentSummary() {
         StringBuilder equipmentSummary = new StringBuilder();
-        equipmentSummary.append(this.name).append(" from team ").append(this.teamName).append(" - equipments summary:");
-        equipmentSummary.append(EquipmentStatus.teamMemberEquipmentSummary(this.memberUniformEquipment));
-        if (equipmentSummary.length() != 0)
-            equipmentSummary.append(System.lineSeparator());
-        equipmentSummary.append(EquipmentStatus.teamMemberEquipmentSummary(this.memberTechnologyEquipment));
+        EquipmentStatus equipmentStatus = new EquipmentStatus();
+        equipmentSummary.append(this.name).append(" from team ").append(this.teamName).append(" - equipments summary:").append(System.lineSeparator());
+        equipmentSummary.append(equipmentStatus.teamMemberEquipmentSummary(this.memberEquipments));
         return equipmentSummary;
     }
 

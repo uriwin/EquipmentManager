@@ -19,11 +19,10 @@ public class Main {
         TeamLeader elior = new TeamLeader("Elior", "Sierra");
         elior.addTeamMember(uri);
 
-        elior.addTechnologyEquipment(eliorInternetComputer);
-        uri.addTechnologyEquipment(urisInternetComputer);
-        uri.addTechnologyEquipment(noamInternetComputer);
-        uri.addUniformEquipment(noamCoatA);
-
+        elior.addEquipment(eliorInternetComputer);
+        uri.addEquipment(urisInternetComputer);
+        uri.addEquipment(noamInternetComputer);
+        uri.addEquipment(noamCoatA);
         elior.printAllTeamEquipment();
 
     }
