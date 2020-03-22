@@ -1,11 +1,11 @@
 package equipments.uniform;
 
 public class UniformEquipmentFactory {
-    public UniformEquipment getUniformEquipment(String uniformEquipmentType, int size) {
+    public UniformEquipment getUniformEquipment(UniformEquipmentTypes uniformEquipmentType, int size) {
         switch (uniformEquipmentType){
-            case "Harmonit":
+            case Hermonit:
                 return new Hermonit(size);
-            case "Coat A":
+            case CoatA:
                 return new CoatA(size);
         }
         return null;

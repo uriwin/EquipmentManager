@@ -1,16 +1,18 @@
 package equipments.technology;
 
 public class TechnologyEquipmentFactory {
-    public TechnologyEquipment getTechnologyEquipment(String technologyEquipmentType, String IP) {
 
+
+    public TechnologyEquipment getTechnologyEquipment(TechnologyEquipmentTypes technologyEquipmentType, String IP) {
         switch (technologyEquipmentType) {
-            case "Voip":
+            case VOIP:
                 return new Voip(IP);
-            case "Internet computer":
+            case InternetComputer:
                 return new InternetComputer(IP);
-            case "Army computer":
+            case ArmyComputer:
                 return new ArmyComputer(IP);
         }
         return null;
     }
+
 }
