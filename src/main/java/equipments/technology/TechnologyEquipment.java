@@ -22,7 +22,7 @@ public abstract class TechnologyEquipment implements Equipment {
     }
 
     @Override
-    public String equipmentType() {
+    public String getEquipmentType() {
         return "Army Computer";
     }
 }

@@ -1,6 +1,5 @@
 package Team;
 
-import equipments.Equipment;
 import equipments.EquipmentStatus;
 import equipments.technology.TechnologyEquipment;
 import equipments.uniform.UniformEquipment;
@@ -23,39 +22,45 @@ public class TeamMember {
     }
 
     public void addUniformEquipment(UniformEquipment equipment) {
-        List<UniformEquipment> newUniformEquipmentType = memberUniformEquipment.get(equipment.equipmentType());
+        List<UniformEquipment> newUniformEquipmentType = memberUniformEquipment.get(equipment.getEquipmentType());
         if (newUniformEquipmentType == null) {
             newUniformEquipmentType = new ArrayList<UniformEquipment>();
-            memberUniformEquipment.put(equipment.equipmentType(), newUniformEquipmentType);
+            memberUniformEquipment.put(equipment.getEquipmentType(), newUniformEquipmentType);
         }
         newUniformEquipmentType.add(equipment);
     }
 
     public void addTechnologyEquipment(TechnologyEquipment equipment) {
-        List<TechnologyEquipment> TechnologyEquipmentType = memberTechnologyEquipment.get(equipment.equipmentType());
+        List<TechnologyEquipment> TechnologyEquipmentType = memberTechnologyEquipment.get(equipment.getEquipmentType());
         if (TechnologyEquipmentType == null) {
             TechnologyEquipmentType = new ArrayList<TechnologyEquipment>();
-            memberTechnologyEquipment.put(equipment.equipmentType(), TechnologyEquipmentType);
+            memberTechnologyEquipment.put(equipment.getEquipmentType(), TechnologyEquipmentType);
         }
         TechnologyEquipmentType.add(equipment);
     }
 
+    public StringBuilder getMemberEquipmentDetails(){
+        StringBuilder equipmentsDetails = new StringBuilder();
+        equipmentsDetails.append(this.name).append(" from team ").append(this.teamName).append(" - equipments details:");
+        equipmentsDetails.append(EquipmentStatus.teamMemberEquipmentDetails(this.memberUniformEquipment));
+        if (equipmentsDetails.length() != 0)
+            equipmentsDetails.append(System.lineSeparator());
+        equipmentsDetails.append(EquipmentStatus.teamMemberEquipmentDetails(this.memberTechnologyEquipment));
+        return equipmentsDetails;
+    }
+
+    public StringBuilder getMemberEquipmentSummary(){
+        StringBuilder equipmentSummary = new StringBuilder();
+        equipmentSummary.append(this.name).append(" from team ").append(this.teamName).append(" - equipments summary:");
+        equipmentSummary.append(EquipmentStatus.teamMemberEquipmentSummary(this.memberUniformEquipment));
+        if (equipmentSummary.length() != 0)
+            equipmentSummary.append(System.lineSeparator());
+        equipmentSummary.append(EquipmentStatus.teamMemberEquipmentSummary(this.memberTechnologyEquipment));
+        return equipmentSummary;
+    }
+
     public void printEquipment() {
-        String equipmentsDetails = "";
-        String equipmentSummary = "";
-
-        System.out.println(this.name + " from team " + this.teamName + " - equipments details:");
-        equipmentsDetails += EquipmentStatus.teamMemberEquipmentDetails(this.memberUniformEquipment);
-        if (!equipmentsDetails.equals(""))
-            equipmentsDetails += System.lineSeparator();
-        equipmentsDetails += EquipmentStatus.teamMemberEquipmentDetails(this.memberTechnologyEquipment);
-        System.out.println(equipmentsDetails);
-
-        System.out.println(this.name + " from team " + this.teamName + " - equipments summary:");
-        equipmentSummary += EquipmentStatus.teamMemberEquipmentSummary(this.memberUniformEquipment);
-        if (!equipmentSummary.equals(""))
-            equipmentSummary += System.lineSeparator();
-        equipmentSummary += EquipmentStatus.teamMemberEquipmentSummary(this.memberTechnologyEquipment);
-        System.out.println(equipmentSummary);
+        System.out.println(getMemberEquipmentDetails());
+        System.out.println(getMemberEquipmentSummary());
     }
 }

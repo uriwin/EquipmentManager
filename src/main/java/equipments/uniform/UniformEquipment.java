@@ -15,7 +15,7 @@ public abstract class UniformEquipment implements Equipment {
     }
 
     @Override
-    public String equipmentType() {
+    public String getEquipmentType() {
         return this.uniformEquipmentType;
     }
 
