@@ -2,7 +2,7 @@ package equipments.uniform;
 
 public class CoatA extends AbstractUniformEquipment {
     public CoatA(int size) {
-        this.size = size;
+        super(size);
         this.uniformEquipmentType = "Coat A";
     }
 }

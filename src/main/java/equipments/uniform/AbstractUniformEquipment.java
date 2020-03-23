@@ -6,6 +6,10 @@ public abstract class AbstractUniformEquipment implements IEquipment {
     public int size;
     public String uniformEquipmentType;
 
+    public AbstractUniformEquipment(int size){
+        this.size = size;
+    }
+
     public int getSize() {
         return size;
     }

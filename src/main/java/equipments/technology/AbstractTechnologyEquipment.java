@@ -6,12 +6,13 @@ public abstract class AbstractTechnologyEquipment implements IEquipment {
     public String IP;
     public String technologyEquipmentType;
 
+    public AbstractTechnologyEquipment(String IP){
+        this.IP = IP;
+    }
+
     public String getIp() {
         return IP;
     }
-
-    ;
-
     public void setIP(String IP) {
         this.IP = IP;
     }
@@ -23,6 +24,6 @@ public abstract class AbstractTechnologyEquipment implements IEquipment {
 
     @Override
     public String getEquipmentType() {
-        return "Army Computer";
+        return this.technologyEquipmentType;
     }
 }
