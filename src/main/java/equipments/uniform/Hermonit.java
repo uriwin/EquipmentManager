@@ -1,6 +1,6 @@
 package equipments.uniform;
 
-public class Hermonit extends UniformEquipment {
+public class Hermonit extends AbstractUniformEquipment {
     public Hermonit(int size) {
         this.size = size;
         this.uniformEquipmentType = "Hermonit";

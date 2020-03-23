@@ -1,8 +1,8 @@
 package equipments.technology;
 
-import equipments.Equipment;
+import equipments.IEquipment;
 
-public abstract class TechnologyEquipment implements Equipment {
+public abstract class AbstractTechnologyEquipment implements IEquipment {
     public String IP;
     public String technologyEquipmentType;
 

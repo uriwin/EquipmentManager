@@ -1,6 +1,6 @@
 package equipments;
 
-public interface Equipment {
+public interface IEquipment {
     public String getEquipmentType();
     public String getEquipmentDetails();
 }

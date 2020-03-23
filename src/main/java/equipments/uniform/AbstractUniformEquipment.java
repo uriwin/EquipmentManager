@@ -1,8 +1,8 @@
 package equipments.uniform;
 
-import equipments.Equipment;
+import equipments.IEquipment;
 
-public abstract class UniformEquipment implements Equipment {
+public abstract class AbstractUniformEquipment implements IEquipment {
     public int size;
     public String uniformEquipmentType;
 

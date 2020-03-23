@@ -3,7 +3,7 @@ package equipments.technology;
 public class TechnologyEquipmentFactory {
 
 
-    public TechnologyEquipment getTechnologyEquipment(TechnologyEquipmentTypes technologyEquipmentType, String IP) {
+    public AbstractTechnologyEquipment getTechnologyEquipment(TechnologyEquipmentTypes technologyEquipmentType, String IP) {
         switch (technologyEquipmentType) {
             case VOIP:
                 return new Voip(IP);

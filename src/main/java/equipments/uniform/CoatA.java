@@ -1,8 +1,6 @@
 package equipments.uniform;
 
-import equipments.Equipment;
-
-public class CoatA extends UniformEquipment {
+public class CoatA extends AbstractUniformEquipment {
     public CoatA(int size) {
         this.size = size;
         this.uniformEquipmentType = "Coat A";
