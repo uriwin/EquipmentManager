@@ -24,7 +24,7 @@ public class AbstractTeamMember implements ITeamMember {
     public StringBuilder getMemberEquipmentDetails() {
         StringBuilder equipmentsDetails = new StringBuilder();
         EquipmentStatus equipmentStatus = new EquipmentStatus();
-        equipmentsDetails.append(this.name).append(" from team ").append(this.teamName).append(" - equipments details:").append(System.lineSeparator());
+        equipmentsDetails.append(this.name).append(" from team ").append(this.teamName).append(" - equipment details:").append(System.lineSeparator());
         equipmentsDetails.append(equipmentStatus.teamMemberEquipmentDetails(this.memberEquipments));
         return equipmentsDetails;
     }
@@ -32,7 +32,7 @@ public class AbstractTeamMember implements ITeamMember {
     public StringBuilder getMemberEquipmentSummary() {
         StringBuilder equipmentSummary = new StringBuilder();
         EquipmentStatus equipmentStatus = new EquipmentStatus();
-        equipmentSummary.append(this.name).append(" from team ").append(this.teamName).append(" - equipments summary:").append(System.lineSeparator());
+        equipmentSummary.append(this.name).append(" from team ").append(this.teamName).append(" - equipment summary:").append(System.lineSeparator());
         equipmentSummary.append(equipmentStatus.teamMemberEquipmentSummary(this.memberEquipments));
         return equipmentSummary;
     }
