@@ -1,9 +1,11 @@
 package Team;
 
-import equipments.EquipmentDescription;
+import equipments.AbstractEquipment;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class TeamLeader extends TeamMember {
     public List<ITeamMember> teamMembers;
@@ -18,17 +20,13 @@ public class TeamLeader extends TeamMember {
         this.teamMembers.add(newTeamMember);
     }
 
-    public String getTeamEquipmentDetails() {
-        StringBuilder teamEquipmentDetails = new StringBuilder();
-        EquipmentDescription equipmentDescription = new EquipmentDescription();
+    public Map<ITeamMember, List<AbstractEquipment>> getTeamEquipments() {
+        Map<ITeamMember, List<AbstractEquipment>> teamEquipments = new HashMap<ITeamMember, List<AbstractEquipment>>();
         for (ITeamMember teamMember : this.teamMembers) {
             if (!teamMember.getEquipments().isEmpty()) {
-                teamEquipmentDetails.append(teamMember.getName()).append(" from team - ")
-                        .append(teamMember.getTeamName()).append(" equipment details:").append(System.lineSeparator());
-                teamEquipmentDetails.append(equipmentDescription.getEquipmentsDescription(teamMember.getEquipments()))
-                        .append(System.lineSeparator());
+                teamEquipments.put(teamMember, teamMember.getEquipments());
             }
         }
-        return teamEquipmentDetails.toString().trim();
+        return teamEquipments;
     }
 }

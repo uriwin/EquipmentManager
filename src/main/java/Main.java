@@ -1,7 +1,9 @@
 import Team.TeamLeader;
 import Team.TeamMember;
-import equipments.EquipmentSummarizer;
+import equipments.EquipmentDescription;
 import equipments.EquipmentType;
+import equipments.summarizer.team.TeamSummarizerFactory;
+import equipments.summarizer.team.TeamSummarizerType;
 import equipments.technology.*;
 import equipments.uniform.AbstractUniformEquipment;
 import equipments.uniform.UniformEquipmentFactory;
@@ -10,7 +12,8 @@ public class Main {
     public static void main(String[] args) {
         TechnologyEquipmentFactory technologyEquipmentFactory = new TechnologyEquipmentFactory();
         UniformEquipmentFactory uniformEquipmentFactory = new UniformEquipmentFactory();
-        EquipmentSummarizer equipmentSummarizer = new EquipmentSummarizer();
+        TeamSummarizerFactory teamSummarizerFactory = new TeamSummarizerFactory();
+        EquipmentDescription equipmentDescription = new EquipmentDescription();
 
         AbstractTechnologyEquipment eliorInternetComputer = technologyEquipmentFactory.getTechnologyEquipment(EquipmentType.InternetComputer, "192.6.66.7");
         AbstractTechnologyEquipment urisInternetComputer = technologyEquipmentFactory.getTechnologyEquipment(EquipmentType.InternetComputer, "192.7.6.5");
@@ -26,8 +29,8 @@ public class Main {
         uri.addEquipment(urisSecondInternetComputer);
         uri.addEquipment(urisCoatA);
 
-        System.out.println(elior.getTeamEquipmentDetails() + System.lineSeparator());
-//        System.out.println(equipmentSummarizer.getTeamEquipmentSummary(elior.teamMembers));
+        System.out.println(equipmentDescription.getTeamEquipmentDescription(elior.getTeamEquipments()) + System.lineSeparator());
+        System.out.println(teamSummarizerFactory.getTeamSummary(TeamSummarizerType.NormalTeamEquipmentSummary,elior.getTeamEquipments()));
 
     }
 }
