@@ -1,9 +1,11 @@
 package equipments.technology;
 
+import equipments.EquipmentType;
+
 public class TechnologyEquipmentFactory {
 
 
-    public AbstractTechnologyEquipment getTechnologyEquipment(TechnologyEquipmentTypes technologyEquipmentType, String IP) {
+    public AbstractTechnologyEquipment getTechnologyEquipment(EquipmentType technologyEquipmentType, String IP) {
         switch (technologyEquipmentType) {
             case VOIP:
                 return new Voip(IP);

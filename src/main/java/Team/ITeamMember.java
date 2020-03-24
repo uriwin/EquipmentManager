@@ -1,9 +1,15 @@
 package Team;
 
-import equipments.IEquipment;
+import equipments.AbstractEquipment;
+
+import java.util.List;
 
 public interface ITeamMember {
-    public void addEquipment(IEquipment equipment);
+    public void addEquipment(AbstractEquipment equipment);
 
-    public String getEquipmentDetails();
+    public String getName();
+
+    public String getTeamName();
+
+    public List<AbstractEquipment> getEquipments();
 }

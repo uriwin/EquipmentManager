@@ -1,12 +1,11 @@
 package equipments.uniform;
 
-import equipments.IEquipment;
+import equipments.AbstractEquipment;
 
-public abstract class AbstractUniformEquipment implements IEquipment {
+public abstract class AbstractUniformEquipment extends AbstractEquipment {
     public int size;
-    public String uniformEquipmentType;
 
-    public AbstractUniformEquipment(int size){
+    public AbstractUniformEquipment(int size) {
         this.size = size;
     }
 
@@ -19,12 +18,7 @@ public abstract class AbstractUniformEquipment implements IEquipment {
     }
 
     @Override
-    public String getEquipmentType() {
-        return this.uniformEquipmentType;
-    }
-
-    @Override
     public String getEquipmentDetails() {
-        return "Uniform equipment type: " + this.uniformEquipmentType + ", size: " + this.size;
+        return "Uniform equipment type: " + this.equipmentType + ", size: " + this.size;
     }
 }

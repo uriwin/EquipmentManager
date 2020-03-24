@@ -1,11 +1,9 @@
 package equipments.technology;
 
-import equipments.IEquipment;
+import equipments.AbstractEquipment;
 
-public abstract class AbstractTechnologyEquipment implements IEquipment {
+public abstract class AbstractTechnologyEquipment extends AbstractEquipment {
     public String IP;
-    public String technologyEquipmentType;
-
     public AbstractTechnologyEquipment(String IP){
         this.IP = IP;
     }
@@ -19,11 +17,6 @@ public abstract class AbstractTechnologyEquipment implements IEquipment {
 
     @Override
     public String getEquipmentDetails() {
-        return "Technology equipment type: " + this.technologyEquipmentType + ", IP: " + this.IP;
-    }
-
-    @Override
-    public String getEquipmentType() {
-        return this.technologyEquipmentType;
+        return "Technology equipment type: " + this.equipmentType + ", IP: " + this.IP;
     }
 }
