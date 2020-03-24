@@ -1,9 +1,9 @@
-import Team.TeamLeader;
-import Team.TeamMember;
+import team.TeamLeader;
+import team.TeamMember;
 import equipments.EquipmentDescription;
 import equipments.EquipmentType;
-import equipments.summarizer.team.TeamSummarizerFactory;
-import equipments.summarizer.team.TeamSummarizerType;
+import summarizer.team.TeamSummarizerFactory;
+import summarizer.team.TeamSummarizerType;
 import equipments.technology.*;
 import equipments.uniform.AbstractUniformEquipment;
 import equipments.uniform.UniformEquipmentFactory;

@@ -1,6 +1,6 @@
 package equipments;
 
-import Team.ITeamMember;
+import team.ITeamMember;
 
 import java.util.List;
 import java.util.Map;

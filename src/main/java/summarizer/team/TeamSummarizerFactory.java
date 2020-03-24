@@ -1,6 +1,6 @@
-package equipments.summarizer.team;
+package summarizer.team;
 
-import Team.ITeamMember;
+import team.ITeamMember;
 import equipments.AbstractEquipment;
 
 import java.util.List;

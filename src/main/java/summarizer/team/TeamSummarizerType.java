@@ -1,4 +1,4 @@
-package equipments.summarizer.team;
+package summarizer.team;
 
 public enum TeamSummarizerType {
     NormalTeamEquipmentSummary

@@ -1,4 +1,4 @@
-package equipments.summarizer;
+package summarizer;
 
 import equipments.AbstractEquipment;
 import equipments.EquipmentType;
