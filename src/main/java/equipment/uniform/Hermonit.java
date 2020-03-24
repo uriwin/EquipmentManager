@@ -1,11 +1,9 @@
-package equipments.uniform;
-
-import equipments.EquipmentType;
+package equipment.uniform;
 
 public class Hermonit extends AbstractUniformEquipment {
     public Hermonit(int size) {
         super(size);
-        this.equipmentType = EquipmentType.Hermonit;
+        this.equipmentType = UniformEquipmentType.Hermonit;
     }
 
 

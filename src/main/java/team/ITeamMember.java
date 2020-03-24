@@ -1,6 +1,6 @@
 package team;
 
-import equipments.AbstractEquipment;
+import equipment.AbstractEquipment;
 
 import java.util.List;
 

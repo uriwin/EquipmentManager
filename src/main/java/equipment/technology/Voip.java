@@ -1,12 +1,10 @@
-package equipments.technology;
-
-import equipments.EquipmentType;
+package equipment.technology;
 
 public class Voip extends AbstractTechnologyEquipment {
 
     public Voip(String IP) {
         super(IP);
-        this.equipmentType = EquipmentType.VOIP;
+        this.equipmentType = TechnologyEquipmentType.VOIP;
     }
 
 }

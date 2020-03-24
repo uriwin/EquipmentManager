@@ -1,7 +1,7 @@
 package summarizer.team;
 
 import team.ITeamMember;
-import equipments.AbstractEquipment;
+import equipment.AbstractEquipment;
 
 import java.util.List;
 import java.util.Map;

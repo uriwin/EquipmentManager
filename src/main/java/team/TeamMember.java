@@ -1,6 +1,6 @@
 package team;
 
-import equipments.AbstractEquipment;
+import equipment.AbstractEquipment;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -12,8 +12,8 @@ public class TeamMember implements ITeamMember {
 
 
     public TeamMember(String name, String teamName) {
-        this.name = name;
-        this.teamName = teamName;
+        this.setName(name);
+        this.setTeamName(teamName);
         this.equipments = new ArrayList<AbstractEquipment>();
     }
 
@@ -31,5 +31,13 @@ public class TeamMember implements ITeamMember {
 
     public String getTeamName() {
         return teamName;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setTeamName(String teamName) {
+        this.teamName = teamName;
     }
 }

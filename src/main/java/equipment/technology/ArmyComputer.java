@@ -1,10 +1,8 @@
-package equipments.technology;
-
-import equipments.EquipmentType;
+package equipment.technology;
 
 public class ArmyComputer extends AbstractTechnologyEquipment {
     public ArmyComputer(String IP) {
         super(IP);
-        this.equipmentType = EquipmentType.ArmyComputer;
+        this.equipmentType = TechnologyEquipmentType.ArmyComputer;
     }
 }

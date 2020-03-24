@@ -1,10 +1,8 @@
-package equipments.uniform;
-
-import equipments.EquipmentType;
+package equipment.uniform;
 
 public class CoatA extends AbstractUniformEquipment {
     public CoatA(int size) {
         super(size);
-        this.equipmentType = EquipmentType.CoatA;
+        this.equipmentType = UniformEquipmentType.CoatA;
     }
 }

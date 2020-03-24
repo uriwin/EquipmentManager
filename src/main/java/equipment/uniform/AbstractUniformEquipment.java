@@ -1,12 +1,12 @@
-package equipments.uniform;
+package equipment.uniform;
 
-import equipments.AbstractEquipment;
+import equipment.AbstractEquipment;
 
 public abstract class AbstractUniformEquipment extends AbstractEquipment {
     public int size;
 
     public AbstractUniformEquipment(int size) {
-        this.size = size;
+        this.setSize(size);
     }
 
     public int getSize() {
@@ -19,6 +19,6 @@ public abstract class AbstractUniformEquipment extends AbstractEquipment {
 
     @Override
     public String getEquipmentDetails() {
-        return "Uniform equipment type: " + this.equipmentType + ", size: " + this.size;
+        return "Uniform equipment type: " + this.equipmentType.toString() + ", size: " + this.getSize();
     }
 }
