@@ -8,7 +8,8 @@ public class EquipmentDescriber {
     public String getEquipmentsDescription(List<AbstractEquipment> equipments) {
         StringBuilder equipmentDescription = new StringBuilder();
         for (AbstractEquipment equipment : equipments) {
-            equipmentDescription.append(equipment.getEquipmentDetails()).append(System.lineSeparator());
+            equipmentDescription.append(equipment.getEquipmentDetails());
+            equipmentDescription.append(System.lineSeparator());
         }
         return equipmentDescription.toString().trim();
     }

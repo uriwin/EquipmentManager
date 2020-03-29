@@ -16,7 +16,7 @@ public class ShortTeamEquipmentSummarizer implements  ITeamEquipmentSummarizer{
     }
 
     @Override
-    public String getTeamSummary(Map<ITeamMember, List<AbstractEquipment>> teamEquipments) {
+    public String getTeamEquipmentSummary(Map<ITeamMember, List<AbstractEquipment>> teamEquipments) {
         StringBuilder teamEquipmentSummarizer = new StringBuilder();
         SummarizerUtils summarizerUtils = new SummarizerUtils();
         for (ITeamMember teamMember : teamEquipments.keySet()) {

@@ -9,7 +9,7 @@ public class UniformEquipmentFactory {
                 return new CoatA(size);
             default:
                 System.out.println("The equipment type: " + uniformEquipmentType.toString() + " does not exists");
+                throw new IllegalArgumentException("Invalid Equipment type");
         }
-        throw new IllegalArgumentException("Invalid Equipment type");
     }
 }
