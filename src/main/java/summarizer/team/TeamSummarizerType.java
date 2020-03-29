@@ -1,6 +1,6 @@
 package summarizer.team;
 
 public enum TeamSummarizerType {
-    NormalTeamEquipmentSummarizer,
+    ExtendedTeamEquipmentSummarizer,
     ShortTeamEquipmentSummarizer
 }

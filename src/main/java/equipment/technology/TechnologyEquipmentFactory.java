@@ -13,8 +13,8 @@ public class TechnologyEquipmentFactory {
                 return new ArmyComputer(IP);
             default:
                 System.out.println("The equipment type: " + technologyEquipmentType.toString() + " does not exists");
+                throw new IllegalArgumentException("Invalid Equipment type");
         }
-        throw new IllegalArgumentException("Invalid Equipment type");
     }
 
 }
