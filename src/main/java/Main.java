@@ -29,7 +29,7 @@ public class Main {
         uri.addEquipment(urisCoatA);
 
         ITeamEquipmentSummarizer teamEquipmentSummarizer = teamSummarizerFactory.getTeamSummarizer(TeamSummarizerType.ExtendedTeamEquipmentSummarizer);
-        System.out.println(teamEquipmentSummarizer.getTeamEquipmentSummary(elior.getTeamEquipments()));
+        System.out.println(teamEquipmentSummarizer.getTeamEquipmentSummary(elior.getTeamMembers()));
 
     }
 }

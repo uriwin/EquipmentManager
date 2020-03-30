@@ -16,16 +16,19 @@ public class ShortTeamEquipmentSummarizer implements  ITeamEquipmentSummarizer{
     }
 
     @Override
-    public String getTeamEquipmentSummary(Map<ITeamMember, List<AbstractEquipment>> teamEquipments) {
+    public String getTeamEquipmentSummary(List<ITeamMember> teamMembers) {
         StringBuilder teamEquipmentSummarizer = new StringBuilder();
         SummarizerUtils summarizerUtils = new SummarizerUtils();
-        for (ITeamMember teamMember : teamEquipments.keySet()) {
-            teamEquipmentSummarizer.append(teamMember.getName()).append(" equipment:").append(System.lineSeparator());
+        for (ITeamMember teamMember : teamMembers) {
+            teamEquipmentSummarizer.append(teamMember.getName())
+                    .append(" equipment:")
+                    .append(System.lineSeparator());
 
-            Map<IEquipmentType, Integer> countEquipmentTypesAppearances = summarizerUtils.CountEquipmentTypesAppearances(teamEquipments.get(teamMember));
+            Map<IEquipmentType, Integer> countEquipmentTypesAppearances = summarizerUtils.CountEquipmentTypesAppearances(teamMember.getEquipments());
             for (IEquipmentType equipment : countEquipmentTypesAppearances.keySet()) {
                 teamEquipmentSummarizer.append(equipment).append(": ")
-                        .append(countEquipmentTypesAppearances.get(equipment)).append(System.lineSeparator());
+                        .append(countEquipmentTypesAppearances.get(equipment))
+                        .append(System.lineSeparator());
             }
         }
         return teamEquipmentSummarizer.toString().trim();

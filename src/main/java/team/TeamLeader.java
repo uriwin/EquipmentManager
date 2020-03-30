@@ -29,4 +29,8 @@ public class TeamLeader extends TeamMember {
         }
         return teamEquipments;
     }
+
+    public List<ITeamMember> getTeamMembers() {
+        return teamMembers;
+    }
 }

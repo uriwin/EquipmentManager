@@ -8,5 +8,5 @@ import java.util.Map;
 
 public interface ITeamEquipmentSummarizer {
     public TeamSummarizerType getSummaryType();
-    public String getTeamEquipmentSummary(Map<ITeamMember, List<AbstractEquipment>> teamEquipments);
+    public String getTeamEquipmentSummary(List<ITeamMember> teamMembers);
 }
